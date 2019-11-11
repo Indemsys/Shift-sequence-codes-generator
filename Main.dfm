@@ -22,7 +22,6 @@ object Form2: TForm2
     Caption = 'pnl_1'
     ShowCaption = False
     TabOrder = 0
-    ExplicitTop = 292
     DesignSize = (
       781
       89)
@@ -99,6 +98,14 @@ object Form2: TForm2
       TabOrder = 4
       Text = '8'
     end
+    object chk_Iverse: TCheckBox
+      Left = 276
+      Top = 60
+      Width = 97
+      Height = 17
+      Caption = 'Inverse search'
+      TabOrder = 5
+    end
   end
   object mem: TMemo
     Left = 0
@@ -114,7 +121,6 @@ object Form2: TForm2
     ParentFont = False
     ScrollBars = ssBoth
     TabOrder = 1
-    ExplicitHeight = 298
   end
   object progr_bar: TProgressBar
     Left = 0
@@ -124,7 +130,6 @@ object Form2: TForm2
     Align = alBottom
     TabOrder = 2
     Visible = False
-    ExplicitTop = 367
   end
   object il1: TImageList
     Left = 416

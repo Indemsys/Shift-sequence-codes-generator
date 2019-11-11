@@ -30,6 +30,7 @@ type
     tmr_1: TTimer;
     edt_Group: TEdit;
     lbl_4: TLabel;
+    chk_Iverse: TCheckBox;
     procedure btn_RunClick(Sender: TObject);
     procedure ed_FileNameRightButtonClick(Sender: TObject);
     procedure tmr_1Timer(Sender: TObject);
@@ -102,6 +103,7 @@ var
   group_bits: integer;
   group_bits_mask: integer;
   group_bits_len: integer;
+  inv_bit : integer;
 begin
   CODE_LEN := StrToInt(ed_CodeWindowLen.Text);
   if CODE_LEN > 16 then
@@ -129,6 +131,9 @@ begin
   progr_bar.Position := 0;
   progr_bar.Visible := True;
 
+  if chk_Iverse.Checked then inv_bit:= 1 else  inv_bit:= 0;
+
+
   max_pos := 0;
 
   current_pos := 0;
@@ -149,9 +154,9 @@ begin
       if probes[current_pos] < 2 then
       begin
         if probes[current_pos] = 0 then
-          bits[current_pos] := 1
+          bits[current_pos] := 1 xor inv_bit
         else
-          bits[current_pos] := 0;
+          bits[current_pos] := 0 xor inv_bit;
         Inc(probes[current_pos]);
       end
       else
